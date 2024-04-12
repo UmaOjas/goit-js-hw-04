@@ -52,4 +52,4 @@ console.log(
         {day: "monday", calories: 1},
         {day: "sunday", calories: 3}
     ])
-  ); // 0
+  ); // 2
