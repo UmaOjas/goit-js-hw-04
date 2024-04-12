@@ -2,11 +2,15 @@
 console.log("TASK 2 -->")
 
 function calcAverageCalories(days) {
+    const totalDays = days.length;
     let totalCalories = 0;
     for(const day of days){
         totalCalories += day.calories
     };
-    return totalCalories / 7;
+    if (totalDays > 0) {
+        return totalCalories / totalDays;
+    } 
+    return 0;
 }
 
 console.log(
@@ -35,4 +39,17 @@ console.log(
   
   console.log(
     calcAverageCalories([])
+  ); // 0
+
+/**   Цієї умови немає в завданні, але я подумала, що якщо спортсмен сьогодні 
+ записав дані, а завтра не записав, чи проспав весь день і нічого не їв, таке. Тобто, в нас в 
+ умові ніби не прописано, що спортсмен обов'язково прописував всі дні. 
+ Знаб, що якщо цього в тз немає, то не треба, але я не могла позбутися цієї думки.
+ */
+
+  console.log(
+    calcAverageCalories([
+        {day: "monday", calories: 1},
+        {day: "sunday", calories: 3}
+    ])
   ); // 0
